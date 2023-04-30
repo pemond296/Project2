@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Nhắn tin hẹn giờ</title>
+</head>
+<body>
+
+  <div class="Form">
+
+    <div class="Left-side">
+      <div class="Name">
+        <h1>SLOWLY</h1>
+      </div>
+      <p>Ghép cặp và chia sẻ với những người bạn khắp đó đây!</p>
+    </div>
+
+    <div class="Right-side">
+      <div class="Form2">
+        <div class="Form3">
+
+          <div class="Title">
+            <div class="title_login">Đăng nhập</div>
+            <div class="title_signup">Đăng ký</div>
+          </div>
+
+          <div class="Form4">
+
+            <form action="" class="form_login">
+              <div class="field">
+                <label for=""><ion-icon name="mail-outline"></ion-icon></label>
+                <input type="text" id="email" placeholder="Email" required />
+              </div>
+              <div class="field">
+                <label for=""><ion-icon name="lock-closed-outline"></ion-icon></label>
+                <input type="password" id="password" placeholder="Mật khẩu" required />
+              </div>
+              <div class="forgot_link">
+                <a href="">Quên mật khẩu?</a>
+              </div>
+              <div class="submit">
+                <input type="submit" value = "Đăng nhập" id="submit">
+              </div>
+              <div class="signup_link">
+                  Bạn chưa phải thành viên? <p>Đăng ký ngay</p>
+              </div>
+            </form>
+
+            <form action="" class="form_signup">
+              <div class="field">
+                <label for=""><ion-icon name="mail-outline"></ion-icon></label>
+                <input type="text" id="email" placeholder="Email" required/>
+              </div>
+              <div class="field">
+                <label for=""><ion-icon name="lock-closed-outline"></ion-icon></label>
+                <input type="password" id="password" placeholder="Mật khẩu" required/>
+              </div>
+              <div class="field">
+                <label for=""><ion-icon name="lock-closed-outline"></ion-icon></label>
+                <input type="password" id="confirm" placeholder="Xác nhận mật khẩu" required/>
+              </div>
+              <div class="field">
+                <label for=""><ion-icon name="person-outline"></ion-icon></label>
+                <input type="text" id="name" placeholder="Tên hiển thị" required/>
+              </div>
+              <div class="field">
+                <label for=""><ion-icon name="calendar-outline"></ion-icon></label>
+                <input type="date" id="birthday" required/>
+              </div>
+              <div class="submit">
+                <input type="submit" value = "Đăng ký"/>
+              </div>
+              <div class="login_link">
+                Bạn đã có tài khoản? <p>Đăng nhập ngay</p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>

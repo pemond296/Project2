@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  font-family:"Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-width: 640px;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(245, 246, 252, 0.52),
+        rgba(205,102,0,0.3)
+    ),
+    url(Background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.title_signup, .form_signup{
+  display: none;
+}
+
+a, p{
+  text-decoration: none;
+  color: #D7B974;
+  font-size: 16px;
+}
+
+a:hover, p:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.Left-side{
+  height: 100%;
+  width: 50%;
+  min-height: 100vh; 
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  float: left;
+}
+
+.Name{
+  margin-top: 320px;
+}
+
+.Name h1{
+  font-size: 40px;
+  font-weight: 600;
+  color: #12CBC4;
+}
+
+.Left-side p{
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+  color: #9980FA;
+}
+
+.Right-side{
+  width: 100%;
+  height: 100%;
+}
+
+.Form2{
+  height: 100%;
+  width: fit-content;
+  display: flex;
+}
+
+.Form3{
+  height: fit-content;
+  width: 400px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 15px 15px 0;
+  display: flex;
+  justify-self: center;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  margin-top: 200px;
+  border: 2px solid rgba(255, 255, 255 0.5);
+  border-radius: 15px;
+  padding: 20px 15px;
+}
+
+.Title div{
+  color:#40407a;
+  padding-top: 20px;
+  font-size: 35px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.field input{
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 16px;
+  border: solid 1px black;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.submit input{
+  background-color:  rgb(190, 176, 44);
+  height: 100%;
+  width: 300px;
+  outline: none;
+  padding: 10px;
+  border: 1px solid lightgrey;
+  border-radius: 24px;
+  font-size: 18px;
+  /* transition: all 1s ease; */
+  margin: 10px 0;
+  color: white;
+}
+
+.submit input:hover{
+  cursor: pointer;
+}
+
+.forgot_link{
+  text-align: right;
+  font-size: 16px;
+}
+
