@@ -19,3 +19,8 @@ login.addEventListener("click", () => {
     form[0].style.display = "block";
     Form.style.marginTop = "200px"
 })
+
+const submit = document.getElementById("submit_login")
+submit.addEventListener('click', () => {
+    window.location.href = '/Home/Home.html'
+})
