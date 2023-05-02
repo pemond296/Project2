@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  cursor: context-menu;
+}
+
+html {
+  font-family:"Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body{
+  color: black;
+  height: 100%;
+  width: 100%;
+  background-image: url(/Background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.container{
+    width: 70%;
+    /* min-width: 1200px; */
+    height: 600px;
+    border-radius: 16px;
+    border: 1px solid whitesmoke;
+    display: flex;
+    box-shadow: rgba(241, 196, 15,1.0) 0 2px 12px 0;
+    margin: auto;
+    margin-top: 80px;
+    background-color: white;
+}
+
+.left{
+    border-bottom-left-radius: 16px;
+    border-top-left-radius: 16px;
+    height: 100%;
+    width: 240px;
+    display: inline-block;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-right: 1px solid #0fbcf9;
+    padding-left: 5px;
+    background-color: #d2dae2;
+    padding-right: 10px;
+}
+
+.form1{
+  width: 100%;
+  height: 100px;
+  justify-content: center;
+}
+
+.logo{
+  width: 100%;
+  height: 25px;
+  padding: 10px;
+}
+
+.logo img{
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  width: 50px;
+  float: left;
+  box-shadow: rgba(255, 237, 211, 0.5) 0px 2px 2px 0px;
+  margin-right: 5px;
+}
+
+.form1 h3{
+  font-size: 20px;
+}
+
+.sidebar{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.field{
+  margin-bottom: 20px;
+  font-size: 20px;
+  border: 1px solid #ffc048;
+  border-radius: 16px;
+  background-color: white;
+}
+
+.showing{
+  background-color: rgb(190, 176, 44);
+  color: white;
+}
+
+.field label{
+  padding: 20px 10px;
+  border-radius: 15px;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.field label #text{
+  margin-bottom: 10px;
+}
+
+label ion-icon{
+  font-size: 25px;
+  padding-top: 10px;
+}
+
+.right{
+  height: 100%;
+  width: 100%;
+}
+
+.form2{
+  height: 100px;
+  width: 100%;
+  display: inline-block;
+  font-size: 20px;
+  border-bottom: 1px solid ;
+  position: relative;
+}
+
+.avatar{
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  width: fit-content;
+  height: 80px;
+  padding: 5px;
+  border-radius: 24px;
+  border: 1px solid #3498db;
+  background-color: #4bcffa;
+}
+
+.name:hover{
+  cursor: pointer;
+}
+
+.avatar img{
+  border-radius: 50%;
+  box-shadow: rgba(255, 237, 211, 0.5) 0px 2px 2px 0px;
+  width: 50px;
+  float: left;
+}
+
+.name{
+  width: 150px;
+  text-align: center;
+  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.form3{
+  width: 100%;
+  height: 80%;
+}
+
+.form{
+  display: none;
+}
+
+.seeing{
+  display: block;
+}
+
+.preface{
+  text-align: center;
+  font-size: 30px;
+  color: #e17055;
+  margin-top: 60px;
+}
+
+.Message{
+  height: 100%;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.near{
+  display: block;
+  text-align: center;
+  font-size: 24px;
+  color:#e84393 ;
+}
+
+.message{
+  display: flex;
+  float: left;
+  border: 1px solid #b2bec3;
+  padding: 30px 100px;
+  margin-left: 30px;
+  margin-top: 30px;
+  border-radius: 16px;
+  background-color: white;
+}
+
+.button-wrapper {
+  position: absolute;
+  right: 7px;
+  top: 80px;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 16px;
+  padding: 10px;
+  background-color: #4bcffa;
+  text-align: center;
+  display: none;
+}
+
+.show{
+  margin-bottom: 10px;
+}
+
+.show .button{
+  padding: 5px 10px;
+  border-radius: 16px;
+  border: 1px solid #636e72;
+  background-color: rgb(190, 176, 44);
+  color: black;
+
+}
+
+.field:hover{
+  cursor: pointer;
+  background-color: rgb(190, 176, 44);
+  color: white;
+}
+
+.button:hover{
+  cursor: pointer;
+  color: white;
+}
+
