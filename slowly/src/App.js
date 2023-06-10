@@ -1,27 +1,19 @@
-import './App.css';
-import Login from './components/Login';
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import ChatRoom from './components/ChatRoom';
-import AuthProvider from './Context/AuthProvider';
-import AppProvider from './Context/AppProvider';
-import AddRoomModal from './components/Modals/AddRoomModal';
-import InviteMemberModal from './components/Modals/InviteMemberModal';
+import React from "react"
+import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Chat from "./pages/Chat/Chat"
+import Login from "./pages/Login/Login"
+import Register from "./pages/Register/Register"
 
-function App() {
+
+export default function App() {
   return (
     <BrowserRouter>
-      <AuthProvider>
-        <AppProvider>
-          <Routes>
-            <Route path='/login' element={<Login/>}/>
-            <Route path='/' element={<ChatRoom/>}/>
-          </Routes>
-          <AddRoomModal />
-          <InviteMemberModal />
-        </AppProvider>
-      </AuthProvider>
+      <Routes>
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Chat />} />
+      </Routes>
     </BrowserRouter>
   );
 }
-
-export default App;
