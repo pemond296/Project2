@@ -5,6 +5,7 @@ const logoutRoute = `${host}/api/auth/logout`;
 const allUsersRoute = `${host}/api/auth/allusers`;
 const sendMessageRoute = `${host}/api/messages/addmsg`;
 const recieveMessageRoute = `${host}/api/messages/getmsg`;
+const setAvatarRoute = `${host}/api/auth/setavatar`;
 
-export {loginRoute, registerRoute, logoutRoute, 
-    allUsersRoute, sendMessageRoute, recieveMessageRoute}
+export {host, loginRoute, registerRoute, logoutRoute, 
+    allUsersRoute, sendMessageRoute, recieveMessageRoute, setAvatarRoute}

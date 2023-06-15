@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
-import './Register.scss'
 import axios from "axios"
+import styled from "styled-components"
 import { useNavigate, Link } from "react-router-dom"
-import Logo from "../assets/logo.svg"
+import Logo from "../assets/logo.jpg"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import { registerRoute } from "../utils/APIRoutes"
@@ -10,11 +10,11 @@ import { registerRoute } from "../utils/APIRoutes"
 export default function Register() {
   const navigate = useNavigate();
   const toastOptions = {
-    position: "bottom-right",
-    autoClose: 8000,
+    position: "top-right",
+    autoClose: 3000,
     pauseOnHover: true,
     draggable: true,
-    theme: "dark",
+    theme: "light",
   };
   const [values, setValues] = useState({
     username: "",
@@ -25,16 +25,16 @@ export default function Register() {
 
   useEffect(() => {
     if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
-      navigate("/")
+      navigate("/");
     }
-  }, [])
+  }, []);
 
   const handleChange = (event) => {
-    setValues({ ...values, [event.target.name]: event.target.value })
+    setValues({ ...values, [event.target.name]: event.target.value });
   };
 
   const handleValidation = () => {
-    const { password, confirmPassword, username, email } = values
+    const { password, confirmPassword, username, email } = values;
     if (password !== confirmPassword) {
       toast.error(
         "Password and confirm password should be same.",
@@ -57,8 +57,9 @@ export default function Register() {
       toast.error("Email is required.", toastOptions);
       return false;
     }
-    return true
-  }
+
+    return true;
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -78,18 +79,20 @@ export default function Register() {
           process.env.REACT_APP_LOCALHOST_KEY,
           JSON.stringify(data.user)
         );
-        navigate("/")
+        navigate("/");
       }
     }
-  }
+  };
 
   return (
     <>
-        <form className="register_form" action="" onSubmit={(event) => handleSubmit(event)}>
-          <div>
+      <FormContainer>
+        <form action="" onSubmit={(event) => handleSubmit(event)}>
+          <div className="brand">
             <img src={Logo} alt="logo" />
-            <h1>snappy</h1>
+            <h1>slowly</h1>
           </div>
+            <p>Connect to the world</p>
           <input
             type="text"
             placeholder="Username"
@@ -114,13 +117,96 @@ export default function Register() {
             name="confirmPassword"
             onChange={(e) => handleChange(e)}
           />
-          <button type="submit">Create User</button>
+          <button type="submit">Sign up</button>
           <span>
-            Already have an account ? <Link to="/login">Login.</Link>
+            Already have an account ? <Link to="/login">Login now</Link>
           </span>
         </form>
+      </FormContainer>
       <ToastContainer />
     </>
-  )
+  );
 }
 
+const FormContainer = styled.div`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    img {
+      height: 5rem;
+      border-radius: 100%;
+    }
+    h1 {
+        background-image: linear-gradient(to right, #00ff99, #ff00bf, yellow, green, #ff00e1, #005082, violet);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+    }
+  }
+
+   p{
+    margin-top: -1rem;
+    padding: 0;
+    background-image: linear-gradient(to right, red, orange, yellow, green, #40ff00, #82004c, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 26px;
+    text-align: center;
+    }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: #00000076;
+    border-radius: 2rem;
+    padding: 3rem 5rem;
+  }
+  input {
+    background-color: transparent;
+    padding: 1rem;
+    border: 0.1rem solid #4e0eff;
+    border-radius: 0.4rem;
+    color: white;
+    width: 100%;
+    font-size: 1rem;
+    &:focus {
+      border: 0.1rem solid #997af0;
+      outline: none;
+    }
+  }
+  button {
+    background-color: #4e0eff;
+    color: white;
+    padding: 1rem;
+    width: fit-content;
+    margin: auto;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    font-size: 1.2rem;
+    &:hover {
+        background-color: #380fb6;
+        color: #ff0015;
+    }
+  }
+  span {
+    color: white;
+    font-size: 18px;
+    a {
+      color: #4e0eff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+`;
