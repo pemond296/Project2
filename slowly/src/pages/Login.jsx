@@ -21,7 +21,6 @@ export default function Login() {
         if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
             navigate("/");
         }
-        return 
     }, []);
 
     const handleChange = (event) => {

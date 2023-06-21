@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import styled from "styled-components"
 import axios from "axios"
 import loader from "../assets/loader.gif"
@@ -51,13 +51,24 @@ export default function SetAvatar(){
         }
       }
     
-      const onImageChange = (event) => {
-        if (event.target.files && event.target.files[0]) {
-          this.setState({
-            image: URL.createObjectURL(event.target.files[0])
-          });
+      const [image, setImage] = useState("");
+      const imageRef = useRef(null);
+     
+      const useDisplayImage = () => {
+        const [result, setResult] = useState("");
+        const uploader = (e) => {
+          const imageFile = e.target.files[0];
+          const reader = new FileReader();
+          reader.addEventListener("load", (e) => {
+            setResult(e.target.result);
+          })
+          reader.readAsDataURL(imageFile);
         }
-       }
+     
+        return { result, uploader };
+      }
+     
+      const { result, uploader } = useDisplayImage();
 
     return (
         <>
@@ -67,13 +78,15 @@ export default function SetAvatar(){
                 <h1>Set Avatar as your profile picture</h1>
               </div>
               <div className="avatars">
+                
                 <input 
-                    accept="image/*"
                     type="file" 
-                    onChange={onImageChange} 
-                    className="filetype" 
-                    id="group_image"
+                    onChange={(e) => {
+                      setImage(e.target.value.files);
+                      uploader(e)
+                    }} 
                 />
+                {result && <img ref={imageRef} src={result} alt="" />}
               </div>
               <button onClick={setProfilePicture} className="submit-btn">
                 Set as Profile Picture
@@ -117,11 +130,15 @@ const Container = styled.div`
       justify-content: center;
       align-items: center;
       transition: 0.5s ease-in-out;
-      img {
+    }
+
+    img {
+        border-radius: 50%;
+
         height: 6rem;
         transition: 0.5s ease-in-out;
       }
-    }
+
     .selected {
       border: 0.4rem solid #4e0eff;
     }
